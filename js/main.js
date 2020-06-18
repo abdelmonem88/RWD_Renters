@@ -48,31 +48,24 @@ $(document).ready(function() {
 	});
 
 	//filter gallery section with mixitup plugin
-	$('.btn.all').click(function() {
-		$('.mixarea .mix').fadeIn(0);
-		$(this).addClass('active-btn').siblings().removeClass('active-btn');
-	});
-	$('.btn.livingroom').click(function() {
-		$('.mix.livingroom ').fadeIn(0);
-		$('.mix.kitchen ').fadeOut(0);
-		$('.mix.bedroom ').fadeOut(0);
-		$(this).addClass('active-btn').siblings().removeClass('active-btn');
-	});
-	$('.btn.kitchen').click(function() {
-		$('.mix.kitchen ').fadeIn(0);
-		$('.mix.livingroom ').fadeOut(0);
-		$('.mix.bedroom ').fadeOut(0);
-		$(this).addClass('active-btn').siblings().removeClass('active-btn');
-	});
-	$('.btn.bedroom').click(function() {
-		$('.mix.bedroom ').fadeIn(0);
-		$('.mix.kitchen ').fadeOut(0);
-		$('.mix.livingroom ').fadeOut(0);
+	var mixer = mixitup('.mixarea');
+	//add active calss to btn
+	$('.mixarea .btn').click(function() {
 		$(this).addClass('active-btn').siblings().removeClass('active-btn');
 	});
 
 	//magnific Popup
 	$('.gallery-icon').magnificPopup({ type: 'image' });
+
+	$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+		disableOn: 700,
+		type: 'iframe',
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		preloader: false,
+
+		fixedContentPos: false
+	});
 
 	//scroll to top
 	$('.totop').click(function(e) {

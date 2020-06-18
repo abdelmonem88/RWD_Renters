@@ -146,6 +146,10 @@ body {
 }
 
 /* gallery section */
+.gallery .mixarea {
+	min-height: 40rem;
+}
+
 .gallery-btn:hover {
 	background: var(--mainGreen);
 	color: var(--mainWhite);
